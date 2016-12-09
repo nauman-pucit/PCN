@@ -1,0 +1,44 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_cpec"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="58dp">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/groupsScrollView2"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=" TERMS AND CONDITIONS "
+                android:layout_marginTop="20dp"
+                android:background="@color/red_dull"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal|top" />
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="6dp"
+                android:lineSpacingMultiplier="1.2"
+                android:textColor="@color/black"
+                android:layout_marginRight="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Small Text"
+                android:id="@+id/TVTerms"
+                android:layout_gravity="center" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

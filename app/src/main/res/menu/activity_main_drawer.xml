@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:title="Home"/>
+            <!--android:icon="@drawable/ic_menu_camera"-->
+
+        <item
+            android:id="@+id/nav_gallery"
+            android:title="CPEC" />
+            <!--android:icon="@drawable/ic_menu_gallery"-->
+
+        <item
+            android:id="@+id/nav_slideshow"
+            android:title="Trade" />
+            <!--android:icon="@drawable/ic_menu_slideshow"-->
+
+        <item
+            android:id="@+id/nav_manage"
+            android:title="Defence" />
+            <!--android:icon="@drawable/ic_menu_manage"-->
+        <item
+            android:id="@+id/culture"
+            android:title="Culture and Tourism" />
+        <item
+            android:id="@+id/friendship"
+            android:title="Friendship" />
+        <item
+            android:id="@+id/science"
+            android:title="Science and Technology" />
+        <item
+            android:id="@+id/Opinions"
+            android:title="Opinions" />
+        <!--<item-->
+            <!--android:id="@+id/ContectUs"-->
+            <!--android:title="Contact Us" />-->
+    </group>
+
+    <!--<item android:title="Communicate">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_share"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Share" />-->
+
+
+            <!--<item-->
+                <!--android:id="@+id/nav_send"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="Send" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>

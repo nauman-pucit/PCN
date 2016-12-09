@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:layout_width="113dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        android:id="@+id/newsicon"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:paddingRight="7dp"
+        android:contentDescription="pcn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+
+        android:layout_marginRight="5dp"
+        android:maxWidth="160dp"
+
+        android:maxLines="2"
+        android:textColor="@color/red_dull"
+        android:id="@+id/title"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/newsicon"
+        android:layout_toEndOf="@+id/newsicon"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:text="Description of the news."
+        android:maxHeight="53dp"
+        android:height="53dp"
+        android:textStyle="bold"
+        android:id="@+id/description"
+        android:layout_toRightOf="@+id/newsicon"
+        android:layout_alignRight="@+id/dateText"
+        android:layout_alignEnd="@+id/dateText"
+        android:layout_below="@+id/dateText"
+        android:paddingTop="7dp"
+        android:layout_marginLeft="7dp"
+        android:paddingBottom="5dp"
+        android:layout_alignBottom="@+id/newsicon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="18-8-2016"
+        android:paddingLeft="3dp"
+        android:id="@+id/dateText"
+        android:textColor="@color/red_dull"
+        android:layout_alignBottom="@+id/title"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/red_dull"
+        android:id="@+id/newsType"
+        android:layout_alignBottom="@+id/newsicon"
+        android:layout_alignLeft="@+id/dateText"
+        android:layout_alignStart="@+id/dateText" />
+
+</RelativeLayout>

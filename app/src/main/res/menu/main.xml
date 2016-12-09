@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/refresh"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_aboutUs"
+        android:orderInCategory="100"
+        android:title="@string/aboutUs"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Disclaimer"
+        android:orderInCategory="100"
+        android:title="@string/Disclaimer"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_privacy"
+        android:orderInCategory="100"
+        android:title="@string/Privacy"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_TermsOfUse"
+        android:orderInCategory="100"
+        android:title="@string/TermsOfUse"
+        app:showAsAction="never" />
+</menu>

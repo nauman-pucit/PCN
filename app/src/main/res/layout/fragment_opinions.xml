@@ -1,0 +1,50 @@
+<android.support.v4.widget.SwipeRefreshLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_opinion"
+    android:layout_marginTop="56dp">
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/groupsScrollView7"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:maxHeight="300dp"
+            android:id="@+id/topStoryImage_opinions"
+            android:adjustViewBounds="true"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+
+            android:minHeight="70dp"
+            android:background="@color/red_dull"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/TopStoryTitle_opinions"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/parentLayout_opinions">
+            <ListView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/listView_opinions"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
