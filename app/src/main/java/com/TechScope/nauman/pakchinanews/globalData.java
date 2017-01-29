@@ -47,5 +47,13 @@ public class globalData {
     public static News TradeTopStory ;
     public static List<News> TradeData = new ArrayList<News>();
 
+    public static boolean jobcounted = false;
+    public static News JobTopStory ;
+    public static List<News> JobData = new ArrayList<News>();
+
+    public static boolean homeUrduCounted = false;
+    public static News HomeUrduTopStory ;
+    public static List<News> HomeUrduData = new ArrayList<News>();
+
 
 }

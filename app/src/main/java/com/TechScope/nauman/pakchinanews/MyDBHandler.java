@@ -175,6 +175,7 @@ public class MyDBHandler extends SQLiteOpenHelper{
         boolean innerFlagscience = true;
         boolean innerFlagopenion = true;
         boolean innerFlagcpechome = true;
+        boolean innerFlagcpechomeurdu = true;
         boolean innerFlagcpectrade = true;
 
         for (int i = 0; i < Titles.size(); i++) {
@@ -260,6 +261,16 @@ public class MyDBHandler extends SQLiteOpenHelper{
                 }else {
                     globalData.Homecounted=true;
                     globalData.HomeData.add(new News(Titles.get(i), ImagesURLS.get(i), Categories.get(i), R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i),PostURL.get(i)));
+                }
+            }
+            if (Categories.get(i).equals("HOME URDU")){
+                if (innerFlagcpechomeurdu== true){
+                    globalData.HomeUrduData.clear();
+                    globalData.HomeUrduTopStory = new News(Titles.get(i), ImagesURLS.get(i), Categories.get(i), R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i),PostURL.get(i));
+                    innerFlagcpechomeurdu = false;
+                }else {
+                    globalData.homeUrduCounted=true;
+                    globalData.HomeUrduData.add(new News(Titles.get(i), ImagesURLS.get(i), Categories.get(i), R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i),PostURL.get(i)));
                 }
             }
         }

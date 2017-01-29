@@ -89,6 +89,17 @@ public class MainActivity extends AppCompatActivity
                 android.support.v4.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction1.replace(R.id.fragment_container,fragment1);
                 fragmentTransaction1.commit();
+            }else if (fregmentName.equals("urdu home")){
+                HomeUrduFragment fragment1 = new HomeUrduFragment();
+                android.support.v4.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction1.replace(R.id.fragment_container,fragment1);
+                fragmentTransaction1.commit();
+            }
+            else if (fregmentName.equals("job")){
+                JobFragment fragment1 = new JobFragment();
+                android.support.v4.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction1.replace(R.id.fragment_container,fragment1);
+                fragmentTransaction1.commit();
             }
 
         }else {
@@ -102,16 +113,6 @@ public class MainActivity extends AppCompatActivity
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -321,6 +322,19 @@ public class MainActivity extends AppCompatActivity
                 fragmentTransaction.commit();
             }else {
                 Opinions fragment = new Opinions();
+                android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.commit();
+            }
+
+        }else if (id == R.id.Jobs ) {
+            if (!globalData.jobcounted){
+                home fragment = new home();
+                android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container,fragment);
+                fragmentTransaction.commit();
+            }else {
+                JobFragment fragment = new JobFragment();
                 android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
                 fragmentTransaction.commit();

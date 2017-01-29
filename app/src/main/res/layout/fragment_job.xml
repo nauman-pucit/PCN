@@ -1,0 +1,52 @@
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_job"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="56dp">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/groupsScrollView2"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/topStoryImage_job"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50dp"
+                android:maxHeight="300dp"
+                android:adjustViewBounds="true"
+                />
+            <TextView
+                android:id="@+id/TopStoryTitle_job"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:minHeight="70dp"
+                android:background="@color/red_dull"
+                android:textColor="#FFFFFF"
+                android:maxLines="2"
+
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                />
+            <LinearLayout
+                android:id="@+id/parentLayout_job"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ListView
+                    android:id="@+id/listView_job"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.v4.widget.SwipeRefreshLayout>

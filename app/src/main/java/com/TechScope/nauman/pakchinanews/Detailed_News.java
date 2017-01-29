@@ -28,19 +28,11 @@ public class Detailed_News extends AppCompatActivity {
     List<News> myNews = new ArrayList<News>();
     List<News> newsList = new ArrayList<News>();
     Button share_btn ;
+    Button btn_twitt ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed__news);
-
-
-//        Bundle newsData = getIntent().getExtras();
-//        if (newsData == null)
-//        {
-//            return;
-//        }
-//
-//        String news = newsData.getString("message");
 
         Intent i = getIntent();
         if (i == null)
@@ -48,9 +40,6 @@ public class Detailed_News extends AppCompatActivity {
             return;
         }
          newsList = (ArrayList<News>) i.getSerializableExtra("message");
-//        Bundle bundle = getIntent().getExtras();
-//        ArrayList<News> newsList = bundle
-//                .getParcelableArrayList("message");
         final News news = newsList.get(0);
         myNews.add(newsList.get(1));
         myNews.add(newsList.get(2));
@@ -60,14 +49,19 @@ public class Detailed_News extends AppCompatActivity {
         if (news.getPictureName()!= " "){
             Picasso.with(Detailed_News.this).load(news.getPictureName()).into(imageview);
         }
-
-//        ImageView imageView = (ImageView)findViewById(R.id.detail_image);
-//        //imageView.setImageResource(R.drawable.vert_loading);
-//        String variableValue = news.getPictureName();
-//        imageView.setImageResource(getResources().getIdentifier(variableValue, "drawable", getPackageName()));
-
         share_btn = (Button) findViewById(R.id.btn_share);
+        btn_twitt = (Button) findViewById(R.id.btn_twitt);
         final ShareDialog shareDialog = new ShareDialog(this);
+        btn_twitt.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                String tweetUrl = "https://twitter.com/intent/tweet?text="+news.getPost_url()+"\n\n"
+                        + news.getPictureName();
+                Uri uri = Uri.parse(tweetUrl);
+                startActivity(new Intent(Intent.ACTION_VIEW, uri));
+            }
+        });
         share_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

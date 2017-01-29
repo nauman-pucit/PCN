@@ -13,6 +13,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1.0">
+                <Button
+                    android:layout_weight=".5"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:text="English"
+                    android:textColor="#FFFFFF"
+                    android:background="@color/red_dull"
+                    android:id="@+id/btn_english" />
+                <Button
+                    android:layout_weight=".5"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:text="Urdu"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/btn_urdu"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/red_dull"
+                    android:layout_gravity="right" />
+            </LinearLayout>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
