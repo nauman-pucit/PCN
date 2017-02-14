@@ -124,9 +124,13 @@ public class home extends Fragment implements View.OnClickListener {
             URLs.add("http://pakchinanews.pk/wp-json/wp/v2/posts?filter[posts_per_page]=20");
             URLs.add("http://pakchinanews.pk/urdu/wp-json/wp/v2/posts?filter[category_name]=cpec&filter[posts_per_page]=10");
             URLs.add("http://pakchinanews.pk/wp-json/wp/v2/posts?filter[category_name]=cpec&filter[posts_per_page]=10");
+            URLs.add("http://pakchinanews.pk/urdu/wp-json/wp/v2/posts?filter[category_name]=cpec&filter[posts_per_page]=10");
             URLs.add("http://pakchinanews.pk/wp-json/wp/v2/posts?filter[category_name]=culture-tourism&filter[posts_per_page]=10");
+            URLs.add("http://pakchinanews.pk/urdu/wp-json/wp/v2/posts?filter[category_name]=cpec&filter[posts_per_page]=10");
             URLs.add("http://pakchinanews.pk/wp-json/wp/v2/posts?filter[category_name]=defense&filter[posts_per_page]=10");
+            URLs.add("http://pakchinanews.pk/urdu/wp-json/wp/v2/posts?filter[category_name]=cpec&filter[posts_per_page]=10");
             URLs.add("http://pakchinanews.pk/wp-json/wp/v2/posts?filter[category_name]=friendship&filter[posts_per_page]=10");
+            URLs.add("http://pakchinanews.pk/urdu/wp-json/wp/v2/posts?filter[category_name]=cpec&filter[posts_per_page]=10");
             URLs.add("http://pakchinanews.pk/wp-json/wp/v2/posts?filter[category_name]=opinion&filter[posts_per_page]=10");
             URLs.add("http://pakchinanews.pk/wp-json/wp/v2/posts?filter[category_name]=science-technology&filter[posts_per_page]=10");
             URLs.add("http://pakchinanews.pk/wp-json/wp/v2/posts?filter[category_name]=trade&filter[posts_per_page]=10");
@@ -145,24 +149,36 @@ public class home extends Fragment implements View.OnClickListener {
                         new JSONTaskForAll().execute(urlToScrap, "cpec");
                         break;
                     case 3:
-                        new JSONTaskForAll().execute(urlToScrap, "culture");
+                        new JSONTaskForAll().execute(urlToScrap, "cpec urdu");
                         break;
                     case 4:
-                        new JSONTaskForAll().execute(urlToScrap, "defence");
+                        new JSONTaskForAll().execute(urlToScrap, "culture");
                         break;
                     case 5:
-                        new JSONTaskForAll().execute(urlToScrap, "friendship");
+                        new JSONTaskForAll().execute(urlToScrap, "culture urdu");
                         break;
                     case 6:
-                        new JSONTaskForAll().execute(urlToScrap, "openion");
+                        new JSONTaskForAll().execute(urlToScrap, "defence");
                         break;
                     case 7:
-                        new JSONTaskForAll().execute(urlToScrap, "science");
+                        new JSONTaskForAll().execute(urlToScrap, "defence urdu");
                         break;
                     case 8:
-                        new JSONTaskForAll().execute(urlToScrap, "trade");
+                        new JSONTaskForAll().execute(urlToScrap, "friendship");
                         break;
                     case 9:
+                        new JSONTaskForAll().execute(urlToScrap, "friendship urdu");
+                        break;
+                    case 10:
+                        new JSONTaskForAll().execute(urlToScrap, "openion");
+                        break;
+                    case 11:
+                        new JSONTaskForAll().execute(urlToScrap, "science");
+                        break;
+                    case 12:
+                        new JSONTaskForAll().execute(urlToScrap, "trade");
+                        break;
+                    case 13:
                         new JSONTaskForAll().execute(urlToScrap, "job");
                         break;
                 }
@@ -678,7 +694,6 @@ public class home extends Fragment implements View.OnClickListener {
                     globalData.TradeData = localDataList;
                     globalData.TradeTopStory = localTopStory;
                     globalData.tradecounted = true;
-                    globalData.AllDataLoaded = true;
                 } else if (current.equals("job")) {
                     globalData.JobData = localDataList;
                     globalData.JobTopStory = localTopStory;
@@ -688,9 +703,23 @@ public class home extends Fragment implements View.OnClickListener {
                     globalData.HomeUrduData = localDataList;
                     globalData.HomeUrduTopStory = localTopStory;
                     globalData.homeUrduCounted = true;
-                    globalData.AllDataLoaded = true;
+                }  else if (current.equals("cpec urdu")) {
+                    globalData.CpecUrduData = localDataList;
+                    globalData.CpecUrduTopStory = localTopStory;
+                    globalData.cpecUrduCounted = true;
+                } else if (current.equals("culture urdu")) {
+                    globalData.CultureUrduData = localDataList;
+                    globalData.CultureUrduTopStory = localTopStory;
+                    globalData.CultureUrduCounted = true;
+                }else if (current.equals("defence urdu")) {
+                    globalData.DefenceUrduData = localDataList;
+                    globalData.DefenceUrduTopStory = localTopStory;
+                    globalData.DefenceUrduCounted = true;
+                } else if (current.equals("friendship urdu")) {
+                    globalData.FriendshipUrduData = localDataList;
+                    globalData.FriendshipUrduTopStory = localTopStory;
+                    globalData.FriendshipUrduCounted = true;
                 } else if (current.equals("PCN")) {
-//                        localDataList.add(new News(" ", " ", " ", 0, " ", " ","",""));
                     globalData.HomeData = localDataList;
                     globalData.HomeTopStory = localTopStory;
 

@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -54,7 +55,8 @@ public class CultureAndTourism extends Fragment implements View.OnClickListener{
     List<Integer> Categories = new ArrayList<Integer>();
     List<String> Captions = new ArrayList<String>();
     String FinalJson;
-
+    Button btn_english;
+    Button btn_urdu;
     public CultureAndTourism() {
         // Required empty public constructor
     }
@@ -98,7 +100,28 @@ public class CultureAndTourism extends Fragment implements View.OnClickListener{
                 getActivity().finish();
             }
         });
+        btn_english = (Button) rootView.findViewById(R.id.btn_english);
+        btn_urdu = (Button) rootView.findViewById(R.id.btn_urdu);
+        btn_english.setOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), MainActivity.class);
+                i.putExtra("message","culture");
+                startActivity(i);
+                getActivity().finish();
+            }
+        });
+        btn_urdu.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), MainActivity.class);
+                i.putExtra("message", "urdu culture");
+                startActivity(i);
+                getActivity().finish();
+            }
+        });
         //Top Story
         ImageView TopStoryImage = (ImageView)rootView.findViewById(R.id.topStoryImage_culture);
 

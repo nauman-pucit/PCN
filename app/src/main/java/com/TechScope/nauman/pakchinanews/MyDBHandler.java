@@ -169,9 +169,13 @@ public class MyDBHandler extends SQLiteOpenHelper{
     }
     public void populateGlobalList() {
         boolean innerFlagcpec = true;
+        boolean innerFlagcpecurdu = true;
         boolean innerFlagculture = true;
+        boolean innerFlagcultureurdu = true;
         boolean innerFlagdefence = true;
+        boolean innerFlagdefenceurdu = true;
         boolean innerFlagfriendship = true;
+        boolean innerFlagfriendshipurdu = true;
         boolean innerFlagscience = true;
         boolean innerFlagopenion = true;
         boolean innerFlagcpechome = true;
@@ -271,6 +275,46 @@ public class MyDBHandler extends SQLiteOpenHelper{
                 }else {
                     globalData.homeUrduCounted=true;
                     globalData.HomeUrduData.add(new News(Titles.get(i), ImagesURLS.get(i), Categories.get(i), R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i),PostURL.get(i)));
+                }
+            }
+            if (Categories.get(i).equals("CPEC URDU")){
+                if (innerFlagcpecurdu== true){
+                    globalData.CpecUrduData.clear();
+                    globalData.CpecUrduTopStory = new News(Titles.get(i), ImagesURLS.get(i), Categories.get(i), R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i),PostURL.get(i));
+                    innerFlagcpecurdu = false;
+                }else {
+                    globalData.cpecUrduCounted=true;
+                    globalData.CpecUrduData.add(new News(Titles.get(i), ImagesURLS.get(i), Categories.get(i), R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i),PostURL.get(i)));
+                }
+            }
+            if (Categories.get(i).equals("CULTURE URDU")){
+                if (innerFlagcultureurdu== true){
+                    globalData.CultureUrduData.clear();
+                    globalData.CultureUrduTopStory = new News(Titles.get(i), ImagesURLS.get(i), Categories.get(i), R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i),PostURL.get(i));
+                    innerFlagcultureurdu = false;
+                }else {
+                    globalData.CultureUrduCounted=true;
+                    globalData.CultureUrduData.add(new News(Titles.get(i), ImagesURLS.get(i), Categories.get(i), R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i),PostURL.get(i)));
+                }
+            }
+            if (Categories.get(i).equals("DEFENCE URDU")){
+                if (innerFlagdefenceurdu== true){
+                    globalData.DefenceUrduData.clear();
+                    globalData.DefenceUrduTopStory = new News(Titles.get(i), ImagesURLS.get(i), Categories.get(i), R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i),PostURL.get(i));
+                    innerFlagdefenceurdu = false;
+                }else {
+                    globalData.DefenceUrduCounted=true;
+                    globalData.DefenceUrduData.add(new News(Titles.get(i), ImagesURLS.get(i), Categories.get(i), R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i),PostURL.get(i)));
+                }
+            }
+            if (Categories.get(i).equals("FRIENDSHIP URDU")){
+                if (innerFlagfriendshipurdu== true){
+                    globalData.FriendshipUrduData.clear();
+                    globalData.FriendshipUrduTopStory = new News(Titles.get(i), ImagesURLS.get(i), Categories.get(i), R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i),PostURL.get(i));
+                    innerFlagfriendshipurdu = false;
+                }else {
+                    globalData.FriendshipUrduCounted=true;
+                    globalData.FriendshipUrduData.add(new News(Titles.get(i), ImagesURLS.get(i), Categories.get(i), R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i),PostURL.get(i)));
                 }
             }
         }

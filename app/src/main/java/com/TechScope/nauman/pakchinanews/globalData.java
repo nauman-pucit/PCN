@@ -55,5 +55,21 @@ public class globalData {
     public static News HomeUrduTopStory ;
     public static List<News> HomeUrduData = new ArrayList<News>();
 
+    public static boolean cpecUrduCounted = false;
+    public static News CpecUrduTopStory ;
+    public static List<News> CpecUrduData = new ArrayList<News>();
+
+    public static boolean CultureUrduCounted = false;
+    public static News CultureUrduTopStory ;
+    public static List<News> CultureUrduData = new ArrayList<News>();
+
+    public static boolean DefenceUrduCounted = false;
+    public static News DefenceUrduTopStory ;
+    public static List<News> DefenceUrduData = new ArrayList<News>();
+
+    public static boolean FriendshipUrduCounted = false;
+    public static News FriendshipUrduTopStory ;
+    public static List<News> FriendshipUrduData = new ArrayList<News>();
+
 
 }

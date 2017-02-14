@@ -94,6 +94,26 @@ public class MainActivity extends AppCompatActivity
                 android.support.v4.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction1.replace(R.id.fragment_container,fragment1);
                 fragmentTransaction1.commit();
+            }else if (fregmentName.equals("urdu cpec")){
+                cpec_urdu fragment1 = new cpec_urdu();
+                android.support.v4.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction1.replace(R.id.fragment_container,fragment1);
+                fragmentTransaction1.commit();
+            }else if (fregmentName.equals("urdu culture")){
+                CultureUrdu fragment1 = new CultureUrdu();
+                android.support.v4.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction1.replace(R.id.fragment_container,fragment1);
+                fragmentTransaction1.commit();
+            }else if (fregmentName.equals("urdu defence")){
+                defence_urdu fragment1 = new defence_urdu();
+                android.support.v4.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction1.replace(R.id.fragment_container,fragment1);
+                fragmentTransaction1.commit();
+            }else if (fregmentName.equals("urdu friendship")){
+                friendship_urdu fragment1 = new friendship_urdu();
+                android.support.v4.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction1.replace(R.id.fragment_container,fragment1);
+                fragmentTransaction1.commit();
             }
             else if (fregmentName.equals("job")){
                 JobFragment fragment1 = new JobFragment();

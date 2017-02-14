@@ -1,5 +1,6 @@
 package com.TechScope.nauman.pakchinanews;
 
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -37,13 +38,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
-public class cpec extends Fragment implements View.OnClickListener {
-
-
+public class cpec_urdu extends Fragment implements View.OnClickListener {
     private List<News> myNews = new ArrayList<News>();
     private News TopStory;
     private List<News> myNews_forDetailAcitvity = new ArrayList<News>();
@@ -59,7 +57,8 @@ public class cpec extends Fragment implements View.OnClickListener {
     String FinalJson;
     Button btn_english;
     Button btn_urdu;
-    public cpec() {
+
+    public cpec_urdu() {
         // Required empty public constructor
     }
 
@@ -70,15 +69,15 @@ public class cpec extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
 
 
-        myNews = globalData.cpecData;
-        TopStory = globalData.CPECTopStory;
+        myNews = globalData.CpecUrduData;
+        TopStory = globalData.CpecUrduTopStory;
         if (globalData.internetIsOffFetchTableData){
             myNews.add(new News(" ", " ", " ", 0, " ", " ","",""));
         }
 
         if (myNews.size() == 0) {
             try {
-                String str_result = new JSONTask().execute("http://pakchinanews.pk/wp-json/wp/v2/posts?filter[category_name]=cpec&filter[posts_per_page]=10").get();
+                String str_result = new JSONTask().execute("http://pakchinanews.pk/urdu/wp-json/wp/v2/posts?filter[category_name]=cpec&filter[posts_per_page]=10").get();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } catch (ExecutionException e) {
@@ -90,21 +89,7 @@ public class cpec extends Fragment implements View.OnClickListener {
 
 
         ArrayAdapter<News> adapter = new MyListAdapter();
-        View rootView = inflater.inflate(R.layout.fragment_cpec, container, false);
-
-        final SwipeRefreshLayout swipe = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_cpec);
-        swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
-
-            @Override
-            public void onRefresh() {
-
-                globalData.HomeRunInBackground=true;
-                Intent i = new Intent(getActivity(), MainActivity.class);
-                i.putExtra("message","cpec");
-                startActivity(i);
-                getActivity().finish();
-            }
-        });
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         btn_english = (Button) rootView.findViewById(R.id.btn_english);
         btn_urdu = (Button) rootView.findViewById(R.id.btn_urdu);
         btn_english.setOnClickListener(new View.OnClickListener(){
@@ -112,7 +97,7 @@ public class cpec extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), MainActivity.class);
-                i.putExtra("message", "cpec");
+                i.putExtra("message","cpec");
                 startActivity(i);
                 getActivity().finish();
             }
@@ -127,18 +112,32 @@ public class cpec extends Fragment implements View.OnClickListener {
                 getActivity().finish();
             }
         });
+        final SwipeRefreshLayout swipe = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_home);
+        swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
+
+            @Override
+            public void onRefresh() {
+
+                globalData.HomeRunInBackground=true;
+                Intent i = new Intent(getActivity(), MainActivity.class);
+                i.putExtra("message","urdu cpec");
+                startActivity(i);
+                getActivity().finish();
+            }
+        });
+
         //Top Story
-        ImageView TopStoryImage = (ImageView) rootView.findViewById(R.id.topStoryImage_cpec);
+        ImageView TopStoryImage = (ImageView) rootView.findViewById(R.id.topStoryImage);
         Picasso.with(getActivity()).load(TopStory.getPictureName()).into(TopStoryImage);
         //TopStoryImage.setImageResource(TopStory.getPictureId());
         TopStoryImage.setOnClickListener(this);
-        TextView TopStoryTitle = (TextView) rootView.findViewById(R.id.TopStoryTitle_cpec);
+        TextView TopStoryTitle = (TextView) rootView.findViewById(R.id.TopStoryTitle);
         TopStoryTitle.setText(TopStory.getTitle());
         TopStoryTitle.setOnClickListener(this);
 
-        ListView myListView = (ListView) rootView.findViewById(R.id.listView_cpec);
+        ListView myListView = (ListView) rootView.findViewById(R.id.listView_Home);
         myListView.setFocusable(false);
-        final LinearLayout parent = (LinearLayout) rootView.findViewById(R.id.parentLayout_cpec);
+        final LinearLayout parent = (LinearLayout) rootView.findViewById(R.id.parentLayout);
         parent.setLayoutParams(new LinearLayout.LayoutParams(parent.getLayoutParams().width, dpToPx(myNews.size() * 120)));
 
         myListView.setAdapter(adapter);
@@ -173,7 +172,6 @@ public class cpec extends Fragment implements View.OnClickListener {
                 });
         return rootView;
     }
-
     public static int dpToPx(int dp) {
         return (int) (dp * Resources.getSystem().getDisplayMetrics().density);
     }
@@ -205,9 +203,9 @@ public class cpec extends Fragment implements View.OnClickListener {
         for (int i = 0; i < Titles.size(); i++) {
 
             if (i == 0) {
-                TopStory = new News(Titles.get(i), ImagesURLS.get(i), "CPEC", R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i), PostURLS.get(i));
+                TopStory = new News(Titles.get(i), ImagesURLS.get(i), "CPEC URDU", R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i), PostURLS.get(i));
             } else {
-                myNews.add(new News(Titles.get(i), ImagesURLS.get(i), "CPEC", R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i), PostURLS.get(i)));
+                myNews.add(new News(Titles.get(i), ImagesURLS.get(i), "CPEC URDU", R.drawable.pcn, dates.get(i), Contents.get(i),Captions.get(i), PostURLS.get(i)));
             }
 
         }
@@ -221,10 +219,10 @@ public class cpec extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.topStoryImage_cpec:
+            case R.id.topStoryImage:
                 TopStoryDetailFunction();
                 break;
-            case R.id.TopStoryTitle_cpec:
+            case R.id.TopStoryTitle:
                 TopStoryDetailFunction();
                 break;
         }
@@ -357,11 +355,6 @@ public class cpec extends Fragment implements View.OnClickListener {
                     indexOf_SRC +=5;
 
                     String srcOfImage = Content.substring(indexOf_SRC, indexof_JPEG);
-//                    int indexOfParagraph = Content.indexOf("<p>");
-//                    int secondIndexOfParagraph = Content.indexOf("<p>",indexOfParagraph);
-//                    int contentLength = Content.length();
-//                    contentLength-=1;
-//                    String pureContent = Content.substring(secondIndexOfParagraph,contentLength);
                     String pureContent = Html.fromHtml(Content).toString();
                     pureContent = pureContent.trim();
                     pureContent = pureContent.replaceAll("\n", "");
@@ -397,10 +390,7 @@ public class cpec extends Fragment implements View.OnClickListener {
             super.onPostExecute(result);
 
             this.dialog.dismiss();
-//            populateList();
-//            ArrayAdapter<News> adapter = new MyListAdapter();
-//            myListView.setAdapter(adapter);
-//            tv.setText(result);
         }
     }
+
 }
